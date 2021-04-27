@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.22.0"
   },
   "husky": {
     "hooks": {
