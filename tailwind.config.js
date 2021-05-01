@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
     plugin(({ addComponents }) => {
       addComponents([
         ...customComponents,

@@ -7,12 +7,12 @@ export default function PostHeader({
 }) {
   return (
     <div className="flex flex-col items-center py-10">
-      <h1 className="text-4xl font-bold">
+      <h1 className="text-center">
         {title}
       </h1>
-      <h2 className="text-xl font-normal text-gray-500 mt-6">
+      <h3 className="text-center">
         {description}
-      </h2>
+      </h3>
     </div>
   );
 }

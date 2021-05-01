@@ -18,11 +18,13 @@ export default function PostLayout({
   return (
     <Layout>
       <div className="px-5">
-        <PostHeader
-          title={frontMatter.title}
-          description={frontMatter.description}
-        />
-        {children}
+        <article className="prose md:prose-lg prose-sm prose-yellow">
+          <PostHeader
+            title={frontMatter.title}
+            description={frontMatter.description}
+          />
+          {children}
+        </article>
       </div>
     </Layout>
   );
