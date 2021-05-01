@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import HomePage from '@/screen/home';
 import Layout from '@/components/layout';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -10,7 +10,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <HomePage />
+        <Link
+          href="/post/improve-your-hooks-with-ref"
+          passHref
+        >
+          <a>
+            go to post
+          </a>
+        </Link>
       </Layout>
     </>
   );
