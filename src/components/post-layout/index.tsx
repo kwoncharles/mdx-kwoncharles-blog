@@ -14,11 +14,10 @@ export default function PostLayout({
   children: ReactNode;
   frontMatter: FrontMatter;
 }) {
-  console.log(frontMatter);
   return (
     <Layout>
-      <div className="px-5">
-        <article className="prose md:prose-lg prose-sm prose-yellow">
+      <div className="px-5 py-10">
+        <article className="prose sm:mx-auto md:prose-lg prose-yellow">
           <PostHeader
             title={frontMatter.title}
             description={frontMatter.description}

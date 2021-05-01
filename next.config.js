@@ -5,11 +5,15 @@ module.exports = withMdx({
   defaultLayout: true,
   fileExtensions: ['mdx'],
   remarkPlugins: [],
-  rehypePlugins: [],
+  rehypePlugins: [
+    require('mdx-prism'),
+    require('rehype-slug'),
+    require('rehype-autolink-headings'),
+  ],
   usesSrc: false,
   extendFrontMatter: {
     // process: (mdxContent, frontMatter) => {},
     phase: 'prebuild|loader|both',
   },
   reExportDataFetching: false,
-})()
+})();

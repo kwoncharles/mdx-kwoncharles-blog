@@ -14,7 +14,7 @@ const author = 'Charles';
 function Header() {
   return (
     <header
-      className="sticky top-0 max-w-7xl mx-auto bg-opacity-50 backdrop-filter sm:backdrop-blur-sm backdrop-blur border-b border-solid border-gray-200"
+      className="sticky z-10 top-0 max-w-7xl mx-auto bg-white bg-opacity-70 backdrop-filter sm:backdrop-blur backdrop-blur border-b border-solid border-gray-200"
     >
       <div className="flex items-center justify-between px-5 sm:py-5 py-4">
         <Link passHref href="/">
