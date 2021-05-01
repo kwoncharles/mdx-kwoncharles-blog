@@ -1,15 +1,14 @@
 ---
-title: "Ref를 활용한 React Hooks 개선"
-date: "2021-04-20T23:20:32.169Z"
-template: "post"
+title: 'Ref를 활용한 React Hooks 개선'
+date: '2021-04-20T23:20:32.169Z'
+template: 'post'
 draft: false
-slug: "/posts/improve-your-hooks-with-ref"
-category: "Tech"
+category: 'Tech'
 tags:
-  - "react"
-  - "hooks"
-  - "ref"
-description: "Ref를 활용한 사용자(개발자) 경험 개선"
+  - 'react'
+  - 'hooks'
+  - 'ref'
+description: 'Ref를 활용한 사용자(개발자) 경험 개선'
 ---
 
 ## 목차
@@ -18,11 +17,17 @@ description: "Ref를 활용한 사용자(개발자) 경험 개선"
 - [ref로 규칙 없애보기](#ref로-규칙-없애보기)
 - [마무리](#마무리)
 
----
-
 React 함수 컴포넌트에서 중복되는 로직은 custom hooks를 이용해 추상화시킬 수 있습니다.
 
 custom hooks를 정의해 사용하다 보면 아래와 같이 함수를 전달받는 경우가 자주 생기죠.
+
+
+import Button from '@/components/button';
+
+<Button>
+  hi
+</Button>
+
 
 ```typescript
 
@@ -97,7 +102,7 @@ function useBrowserEvent(
 그런데 위와 같이 정의된 `useBrowserEvent`를 사용할 때에는 조심해야할 것이 하나 있습니다. 해당 hooks 내부에서, `listener` 함수를 `useEffect`의 의존성 배열로 전달했기 때문에 `listener`로 전달하는 함수가 매 렌더링마다 불필요하게 변경되는지를 학인해줘야 합니다.
 
 간단한 예제로 살펴보겠습니다. 
- 
+
 ```tsx
 function Page() {
   const [scrollProgress, setScrollProgress] = useState(

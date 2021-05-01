@@ -1,16 +1,17 @@
 import Link from 'next/link';
+import { PropsWithChildren } from 'react';
 import GithubIcon from '@/components/icon/github';
 
 const icons = [
   {
     href: 'https://github.com/kwoncharles',
-    component: GithubIcon,
+    icon: GithubIcon,
   },
 ];
 
 const author = 'Charles';
 
-export default function Header() {
+function Header() {
   return (
     <header
       className="sticky top-0 max-w-7xl mx-auto bg-opacity-50 backdrop-filter sm:backdrop-blur-sm backdrop-blur border-b border-solid border-gray-200"
@@ -22,13 +23,36 @@ export default function Header() {
           </a>
         </Link>
         <div className="sm:flex hidden">
-          {icons.map(({ href, component: Component }) => (
+          {icons.map(({ href, icon: Icon }) => (
             <a href={href} key={href}>
-              <Component className="ml-2 w-[22px] h-[22px] text-gray-500 hover:text-gray-600 fill-current" />
+              <Icon className="ml-2 w-[22px] h-[22px] text-gray-500 hover:text-gray-600 fill-current" />
             </a>
           ))}
         </div>
       </div>
     </header>
+  );
+}
+
+function Body({
+  children,
+}: PropsWithChildren<unknown>) {
+  return (
+    <main className="max-w-7xl mx-auto">
+      {children}
+    </main>
+  );
+}
+
+export default function Layout({
+  children,
+}: PropsWithChildren<unknown>) {
+  return (
+    <>
+      <Header />
+      <Body>
+        {children}
+      </Body>
+    </>
   );
 }

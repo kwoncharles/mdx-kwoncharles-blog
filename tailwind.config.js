@@ -4,13 +4,7 @@ module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.tsx', './pages/**/*.tsx'],
   theme: {
-    extend: {
-      colors: {
-        'simple-gray': {
-          000: '#1e1e1e',
-        }
-      }
-    }
+    extend: {},
   },
   variants: {
     extend: {

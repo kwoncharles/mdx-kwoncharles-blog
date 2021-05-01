@@ -46,6 +46,7 @@ module.exports = {
     '.eslintrc.js',
     'tailwind.config.js',
     'postcss.config.js',
+    'next.config.js',
   ],
   rules: {
     /**
