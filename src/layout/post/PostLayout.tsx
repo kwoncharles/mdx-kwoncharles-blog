@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import AuthorCard from '@/components/author-card';
 import PostNavigation from '@/components/post-navigation';
+import { useAuthor } from '@/hooks/useAuthor';
 import { ReactNode } from 'react';
 import Layout from '../default';
 
@@ -70,6 +71,13 @@ function PostHeader({
   description: string;
   publishDate: Date;
 }) {
+  const {
+    name,
+    avatarSrc,
+    primarySns,
+    getSNSHref,
+    sns,
+  } = useAuthor();
   return (
     <div className="relative flex flex-col max-w-2xl mx-auto">
       <div>
@@ -82,11 +90,11 @@ function PostHeader({
       </div>
       <div className="flex justify-between items-end mt-14">
         <AuthorCard
-          name="신권철"
-          // profileSrc="https://miro.medium.com/fit/c/56/56/1*2p_VtjKxp3-KjieddlBYnw.jpeg"
+          name={name}
+          // avatarSrc={avatarSrc}
           sns={{
-            accountName: 'KwonCharles_',
-            href: 'https://twitter.com/KwonCharles_',
+            accountName: sns[primarySns],
+            href: getSNSHref(sns[primarySns], primarySns),
           }}
         />
 

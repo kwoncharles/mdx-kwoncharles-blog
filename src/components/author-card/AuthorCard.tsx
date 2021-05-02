@@ -3,13 +3,13 @@ import Avatar from '../icon/avatar';
 import styles from './AuthorCard.module.css';
 
 export default function AuthorCard({
-  profileSrc,
+  avatarSrc,
   name,
   sns,
   className,
 }: {
   name: string;
-  profileSrc?: string;
+  avatarSrc?: string;
   sns?: {
     accountName: string;
     href: string;
@@ -21,10 +21,10 @@ export default function AuthorCard({
       className={clsx('flex items-center justify-between', className)}
       style={{ width: 'fit-content' }}
     >
-      {profileSrc ? (
+      {avatarSrc ? (
         <img
           className={styles.authorImg}
-          src={profileSrc}
+          src={avatarSrc}
           alt={`${name} profile`}
         />
       ) : (
