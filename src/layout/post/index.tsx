@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Layout from '../layout';
+import Layout from '../default';
 import PostHeader from './post-header';
 
 type FrontMatter = {
