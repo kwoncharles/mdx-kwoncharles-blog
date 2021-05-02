@@ -1,0 +1,22 @@
+.post-layout {
+  /* [START] table of contents  */
+  :global .toc {
+    @apply pb-10;
+    ol {
+      &.toc-level-1 > li {
+        padding-left: 0 !important;
+      }
+      > li {
+        @apply text-base bg-transparent;
+        &:before {
+          display: none;
+        }
+        > a {
+          @apply px-[6px] py-1 rounded hover:bg-gray-200 bg-opacity-50 transition-colors;
+          @apply text-gray-500 text-opacity-70 font-normal;
+        }
+      }
+    }
+  }
+  /* [END] table of contents  */
+}

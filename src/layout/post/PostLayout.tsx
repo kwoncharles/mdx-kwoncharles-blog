@@ -2,8 +2,10 @@
 import AuthorCard from '@/components/author-card';
 import PostNavigation from '@/components/post-navigation';
 import { useAuthor } from '@/hooks/useAuthor';
+import clsx from 'clsx';
 import { ReactNode } from 'react';
 import Layout from '../default';
+import styles from './PostLayout.module.css';
 
 type FrontMatter = {
   title?: string;
@@ -27,7 +29,7 @@ export default function PostLayout({
           publishDate={new Date(frontMatter.date)}
         />
       </div>
-      <div className="md:pt-10 pt-6 px-5 ">
+      <div className={clsx('md:pt-10 pt-6 px-5', styles['post-layout'])}>
         <ContentPanel content={children} />
       </div>
       <div className="pt-5 px-5 ">
