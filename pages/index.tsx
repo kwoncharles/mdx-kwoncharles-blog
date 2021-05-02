@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Layout from '@/components/layout';
 import Link from 'next/link';
 import Layout from '@/layout';
 
@@ -13,6 +12,14 @@ export default function Home() {
       <Layout>
         <Link
           href="/post/improve-your-hooks-with-ref"
+          passHref
+        >
+          <a>
+            go to post
+          </a>
+        </Link>
+        <Link
+          href="/post/break-the-components"
           passHref
         >
           <a>
